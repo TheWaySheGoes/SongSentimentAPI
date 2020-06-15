@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Uppgift 2</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<h1 class="display-4">What's the mood?</h1>
+		<p class="lead">This is a simple API Mashup. Write an author of a
+			song, and a title into the fields and check what is the sentiment of
+			the text in the song. The scale stretches from -1 (very negative), to
+			+1 (very positive).</p><p class="lead">Additional list with authors and songs will also be presented after successful submit (and server availability)</p>
+			<p class="lead">	Song examples:<br>coldplay - Adventure of a Lifetime<br> Louis Armstrong - What a wonderful world <br>
+			OutKast - Hey Ya!
+		</p>
+		<hr class="my-4">
+		<p>
+		Idea behind the app is to know on the fly the sentiment of a song, and to find other songs with similar tone. The sentiment is based on the text in a particular song.  This mash-up is made of 3 different APIs. The first one is responsible for finding text of a song based on the author and a song name. It can be found here https://lyricsovh.docs.apiary.io/#. The second app takes the lyrics and calculates the sentiment. This one can be found here https://sentim-api.herokuapp.com/. Last one takes the text and searches its database for different songs with similar text. Last API can be found here https://searchly.asuarez.dev/. JavaScript makes connecting to APIs very easy with a fetch() function. It can be a very fruitful endeavour  to try to mash-up different APIs. Such experimentation with different APIs helps in learning core javaScript. This mash-up was born from the idea of finding similar texts. The sentiment idea, which became the central point of the API was an add-on in the beginning. Now it is possible to search for favourite song, and songs alike, and see the sentiment of all of them. </p>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<ul class="list-group" id="similarity_List">
+					<li class="list-group-item active">Similar songs:</li>
+				</ul>
+			</div>
+			<div class="col-sm-8" id="midlle_col">
+
+				<form id="input_form">
+					<input class="form-control form-control-lg" type="text"
+						placeholder="artist" id="input_artist"> <br> <input
+						class="form-control form-control-lg" type="text"
+						placeholder="song" id="input_song"> <br>
+					<button type="submit" class="btn btn-primary" id="submit_btn">Submit</button>
+
+				</form>
+				<br>
+
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
